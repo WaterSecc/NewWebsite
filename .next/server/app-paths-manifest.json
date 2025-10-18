@@ -1,0 +1,7 @@
+{
+  "/[locale]/contact/page": "app/[locale]/contact/page.js",
+  "/[locale]/about/page": "app/[locale]/about/page.js",
+  "/[locale]/career/page": "app/[locale]/career/page.js",
+  "/[locale]/joinecosystem/page": "app/[locale]/joinecosystem/page.js",
+  "/[locale]/page": "app/[locale]/page.js"
+}
