@@ -16,7 +16,9 @@ const Hero = () => {
         </h1>
 
         <p className="mb-8 text-base leading-relaxed text-gray-700 sm:text-lg md:text-xl">
-          Prevent costly leaks and reduce your water footprint with our smart IoT-solution.
+          Prevent costly leaks and reduce your water footprint
+  <br />
+  with our smart IoT solution.
         </p>
 
         {/* CTAs */}
@@ -36,12 +38,12 @@ const Hero = () => {
         </div>
 
         {/* Visuals */}
-        <div className="mb-16 relative max-w-[1150px] mx-auto">
+        <div className="mb-8 relative max-w-[1290px] mx-auto">
           {/* Side images grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {/* Left: man with tablet */}
 
-            <div className="relative w-[100%] h-[220px] sm:h-[260px] md:h-[300px] rounded-[24px] overflow-hidden ml-auto">
+            <div className="relative w-[100%] h-[620px] sm:h-[260px] md:h-[300px] rounded-[24px] overflow-hidden ml-auto">
               <Image
                 src="/images/hero/watermanager.png"
                 alt="Engineer inspecting water system"
@@ -52,7 +54,7 @@ const Hero = () => {
               />
             </div>
             {/* Right: WaterSec box */}
-            <div className="relative w-[100%] h-[220px] sm:h-[260px] md:h-[300px] rounded-[24px] overflow-hidden mr-auto">
+            <div className="relative w-[100%] h-[620px] sm:h-[260px] md:h-[300px] rounded-[24px] overflow-hidden mr-auto">
               <Image
                 src="/images/hero/sensor.png"
                 alt="WaterSec device"
@@ -65,7 +67,7 @@ const Hero = () => {
 
           {/* Center overlay: dashboard (desktop & up) */}
           <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-10 z-20 w-[67%] lg:w-[42%]">
-            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 z-20 w-[85%] h-[220px] sm:h-[260px] md:h-[300px] rounded-[26px] overflow-hidden ">
+            <div className="hidden md:block absolute left-1/2 -translate-x-1/2 -bottom-3 z-20 w-[78%] h-[220px] sm:h-[260px] md:h-[300px] rounded-[26px] overflow-hidden ">
               <Image
                 src="/images/hero/mockup.png"
                 alt="WaterSec dashboard"

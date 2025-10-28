@@ -55,12 +55,6 @@ const AboutSectionFour = () => {
       image: "/images/about/mohamed.png",
     },
     {
-      name: "Yasmine BEN MILOUD",
-      title: "Product Manager",
-      linkedin: "https://www.linkedin.com/in/yasmine-ben-miloud-04567683/",
-      image: "/images/about/yassmine.png",
-    },
-    {
       name: "Slim BOUAKEZ",
       title: "Business Manager",
       linkedin: "https://www.linkedin.com/in/ahmed-slim-bouakez/",
@@ -77,6 +71,12 @@ const AboutSectionFour = () => {
       title: "Software Manager",
       linkedin: "https://www.linkedin.com/in/khoubeib-tlili-56b2a579/",
       image: "/images/about/khoubeib.png",
+    },
+    {
+      name: "Yasmine BEN MILOUD",
+      title: "Product Manager",
+      linkedin: "https://www.linkedin.com/in/yasmine-ben-miloud-04567683/",
+      image: "/images/about/yassmine.png",
     },
   ];
 

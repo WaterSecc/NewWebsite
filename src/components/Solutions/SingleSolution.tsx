@@ -11,7 +11,7 @@ const SingleSolution = ({ solution }: Props) => {
       <div
         className="
           relative
-          w-[min(240px,80vw)] h-[310px]
+          w-[min(240px,80vw)] h-[310px] 
           rounded-[20px] border border-bleujdid bg-white
           p-5 text-bleujdid
           transition-colors duration-300 ease-in-out
@@ -52,7 +52,7 @@ const SingleSolution = ({ solution }: Props) => {
           py-2.5 text-[16px] font-semibold text-bleujdid
           transition-colors duration-300
           group-hover:bg-bleujdid group-hover:text-white group-hover:border-bleujdid
-          hover:bg-watersecblue hover:text-white hover:border-watersecblue
+          hover:bg-bleujdid hover:text-white hover:border-bleujdid
         "
       >
         Read more

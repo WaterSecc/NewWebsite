@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap');
 
 /**/
 
@@ -135,47 +135,47 @@
 
 @layer base {
   body {
-    font-family: "Inter", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 16px;
     line-height: 1.75;
     letter-spacing: 0.01em;
   }
   h1 {
-    font-size: 2.5rem;    /* 40px */
-    line-height: 3rem;    /* 48px */
+    font-size: 2.5rem; 
+    line-height: 3rem; 
     font-weight: 700;
     letter-spacing: -0.015em;
     margin-bottom: 1rem;
   }
 
   h2 {
-    font-size: 2rem;      /* 32px */
-    line-height: 2.5rem;  /* 40px */
+    font-size: 2rem; 
+    line-height: 2.5rem;
     font-weight: 600;
     margin-bottom: 0.75rem;
   }
 
   h3 {
-    font-size: 1.5rem;    /* 24px */
+    font-size: 1.5rem; 
     line-height: 2rem;
-    font-weight: 600;
+    font-weight: 500; 
     margin-bottom: 0.5rem;
   }
 
   p, li {
-    font-size: 1rem;      /* 16px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1rem;
+    line-height: 1.75rem;
     font-weight: 400;
     margin-bottom: 1rem;
   }
 
   small {
-    font-size: 0.875rem;  /* 14px */
+    font-size: 0.875rem;
     line-height: 1.5rem;
   }
 
   strong {
-    font-weight: 600;
+    font-weight: 700;
   }
 }
 

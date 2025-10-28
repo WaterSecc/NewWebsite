@@ -31,18 +31,18 @@ export default function KPIs() {
           {kpis.map((kpi, index) => (
             <div key={index} className="flex flex-col items-center">
               {/* Circle with image */}
-              <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#0A66FF]">
+              <div className="mb-5 flex h-25 w-25 items-center justify-center rounded-full bg-[#0A66FF]">
                 <Image
                   src={kpi.image}
                   alt={kpi.label}
-                  width={36}
-                  height={36}
+                  width={46}
+                  height={46}
                   className="object-contain"
                 />
               </div>
 
               {/* Number */}
-              <h2 className="text-3xl font-extrabold text-black">
+              <h2 className="text-4xl font-extrabold text-black">
                 <CountUp
                   end={kpi.value}
                   duration={3}
@@ -53,7 +53,7 @@ export default function KPIs() {
               </h2>
 
               {/* Label */}
-              <p className="mt-2 text-base font-medium text-black">
+              <p className="mt-0 text-base font-medium text-black">
                 {kpi.label}
               </p>
             </div>

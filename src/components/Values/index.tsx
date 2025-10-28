@@ -15,7 +15,7 @@ const Values = () => {
                         center
                     />
 
-                   <div className="mx-auto grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-3 place-items-center">
+                   <div className="mx-auto grid max-w-4xl grid-cols-1 gap-10 md:grid-cols-3 place-items-center">
                         {valuesData().map((value) => (
                             <SingleValue key={value.id} value={value} />
                         ))}
