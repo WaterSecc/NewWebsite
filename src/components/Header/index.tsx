@@ -90,7 +90,7 @@ const Header = () => {
                       className={`text-[15px] md:text-[16px] font-medium tracking-tight transition-colors ${
                         pathname === item.path
                           ? "text-gray-900 dark:text-white font-semibold"
-                          : "text-gray-500 hover:text-gray-900 dark:text-white/70 dark:hover:text-white"
+                          : "text-gray-500 hover:text-gray-900 dark:text-white/70 dark:hover:text-white hover:font-semibold"
                       }`}
                     >
                       {item.title}

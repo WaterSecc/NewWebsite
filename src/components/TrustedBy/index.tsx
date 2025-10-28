@@ -49,7 +49,7 @@ const TrustedBy = () => {
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-12 md:gap-8">
           {/* Left column (narrow to force 2-line title like the reference) */}
           <div className="md:col-span-4 lg:col-span-3">
-            <h2 className="text-left text-2xl md:text-[28px] leading-tight font-semibold tracking-tight text-gray-900 dark:text-white">
+            <h2 className="text-left text-2xl md:text-[28px] leading-tight font-normal tracking-tight text-gray-900 dark:text-white">
               Leading companies
               <br />
               trust WaterSec.

@@ -1,15 +1,7 @@
 "use client";
-
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import Image from "next/image";
 import L, { LatLngExpression } from "leaflet";
-import "leaflet/dist/leaflet.css";
 
-// make Leaflet default marker work in Next.js
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl: "/leaflet/marker-icon-2x.png",
-  iconUrl: "/leaflet/marker-icon.png",
-  shadowUrl: "/leaflet/marker-shadow.png",
-});
 
 const position: LatLngExpression = [36.8375, 10.1658]; // Manar I, Tunis
 const gmapsUrl =
@@ -48,26 +40,17 @@ export default function MapSection() {
           </div>
 
           {/* RIGHT : map */}
-          <div className="mr-18 h-[380px] rounded-3xl ring-1 ring-black/10 shadow-sm overflow-hidden md:h-[460px] lg:h-[520px]">
-            <MapContainer
-              center={position}
-              zoom={15}
-              scrollWheelZoom={false}
-              className="h-full w-full"
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker position={position}>
-                <Popup>
-                  WaterSec HQ
-                  <br />
-                  16, University Street – Manar I, Tunis 2092
-                </Popup>
-              </Marker>
-            </MapContainer>
-          </div>
+          <div className="mr-18 h-[380px] rounded-3xl ring-1 ring-black/10 shadow-sm overflow-hidden md:h-[460px] lg:h-[520px] relative">
+  <Image
+    src="/images/map/location.png" 
+    alt="WaterSec HQ location map"
+    fill
+    className="object-cover"
+    sizes="100vw"
+    priority
+  />
+</div>
+
         </div>
       </div>
     </section>
