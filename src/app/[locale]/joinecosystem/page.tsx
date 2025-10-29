@@ -1,4 +1,4 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
+import EcoSysHero from "@/components/EcoSysHero";
 import JoinEcoSystem from "@/components/JoinEcoSystem";
 
 import { Metadata } from "next";
@@ -12,13 +12,9 @@ export const metadata: Metadata = {
 const JoinEcoSystemPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Join Our Eco-System "
-        description=""
-      />
-
+      <EcoSysHero/>
       <JoinEcoSystem />
-    </>
+    </> 
   );
 };
 

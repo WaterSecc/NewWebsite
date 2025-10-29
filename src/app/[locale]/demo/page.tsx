@@ -1,5 +1,5 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import Demo from "@/components/Demo";
+import DemoHero from "@/components/DemoHero";
 
 import { Metadata } from "next";
 
@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 const DemoPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Request a DEMO"
-        description=""
-      />
-
+     <DemoHero />
       <Demo />
     </>
   );

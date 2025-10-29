@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Snackbar from "@/components/Shared/Snackbar";
 import NewsLetterBox from "./NewsLetterBox";
@@ -20,30 +21,44 @@ const Contact = () => {
     variant: "success" as "success" | "error",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    setErrors((prev) => ({ ...prev, [e.target.name]: "" }));
   };
 
   const validate = () => {
     const newErrors: { [key: string]: string } = {};
-    if (!formData.firstName || formData.firstName.length < 4)
+
+    if (!formData.firstName || formData.firstName.trim().length < 4)
       newErrors.firstName = "First name must be at least 4 characters.";
-    if (!formData.lastName || formData.lastName.length < 4)
+
+    if (!formData.lastName || formData.lastName.trim().length < 4)
       newErrors.lastName = "Last name must be at least 4 characters.";
+
     if (!formData.email) {
       newErrors.email = "Email is required.";
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) {
       newErrors.email = "Please enter a valid email address.";
     }
-    if (!formData.phone)
+
+    if (!formData.phone) {
       newErrors.phone = "Phone number is required.";
-    else if (!/^[\d+]+$/.test(formData.phone))
+    } else if (!/^[\d+]+$/.test(formData.phone)) {
       newErrors.phone = "Phone number must only contain numbers or the + character.";
-    else if (formData.phone.replace(/\D/g, "").length < 8)
+    } else if (formData.phone.replace(/\D/g, "").length < 8) {
       newErrors.phone = "Phone number must be at least 8 digits.";
-    if (!formData.message)
+    }
+
+    if (!formData.message || !formData.message.trim())
       newErrors.message = "Message is required.";
+
     return newErrors;
+  };
+
+  const handleBlurValidate = () => {
+    setErrors((prev) => ({ ...prev, ...validate() }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -63,11 +78,11 @@ const Contact = () => {
     // Simulate form submission
     setSnack({
       visible: true,
-      message: " Message sent successfully, we will try to contact you as soon as possible.",
+      message:
+        "Message sent successfully, we will try to contact you as soon as possible.",
       variant: "success",
     });
 
-    // Optionally reset form
     setFormData({
       firstName: "",
       lastName: "",
@@ -77,127 +92,163 @@ const Contact = () => {
     });
   };
 
+  const inputClass = (field: string) =>
+    [
+      "w-full rounded-md bg-white text-[#1C2B5A] placeholder-bleujdid/80 px-5 py-3 border-2 focus:outline-none",
+      errors[field]
+        ? "border-red-500 focus:ring-4 focus:ring-red-200"
+        : "border-white focus:ring-4 focus:ring-white/30",
+    ].join(" ");
+
   return (
     <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
       <div className="container">
-        <div className="-mx-4 flex flex-wrap">
-          <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
-            <div className="mb-12 rounded-xs bg-white px-8 py-11 shadow-three dark:bg-gray-dark sm:p-[55px] lg:mb-5 lg:px-8 xl:p-[55px]">
-              <h2 className="mb-3 text-2xl font-bold text-black dark:text-white sm:text-3xl lg:text-2xl xl:text-3xl">
-                For more information contact us
-              </h2>
-              <p className="mb-12 text-base font-medium text-body-color">
-                Our support team will get back to you ASAP via email.
-              </p>
-              <form onSubmit={handleSubmit}>
-                <div className="-mx-4 flex flex-wrap">
-                  {/* First Name */}
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label htmlFor="firstName" className="mb-3 block text-sm font-medium text-dark dark:text-white">
-                        First Name
-                      </label>
-                      <input
-                        type="text"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        placeholder="Enter your first name"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color focus:border-watersecblue dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two"
-                      />
-                      {errors.firstName && <p className="text-red-500 text-sm mt-1">{errors.firstName}</p>}
-                    </div>
+        <div
+          className="grid items-start gap-10 md:gap-12 lg:gap-16"
+          style={{ gridTemplateColumns: "65% 35%" }}
+        >
+
+          <div className="relative">
+
+            <h2 className="mb-2 text-2xl sm:text-3xl font-bold text-black">
+              Contact Us
+            </h2>
+            <p className="mb-8 text-black/80 text-base sm:text-lg">
+              Our support team will get back to you as soon as possible via email.
+            </p>
+            <div className="relative rounded-xl bg-bleujdid p-6 sm:p-8 md:p-10 shadow-[0_24px_64px_rgba(0,0,0,0.15)] text-white">
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* First / Last Name */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4">
+                  <div>
+                    <input
+                      type="text"
+                      name="firstName"
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      onBlur={handleBlurValidate}
+                      placeholder="First Name:"
+                      className={inputClass("firstName")}
+                    />
+                    {errors.firstName && (
+                      <p className="mt-1 text-sm text-red-100 bg-red-500/20 rounded px-2 py-1 inline-block">
+                        {errors.firstName}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Last Name */}
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label htmlFor="lastName" className="mb-3 block text-sm font-medium text-dark dark:text-white">
-                        Last Name
-                      </label>
-                      <input
-                        type="text"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleChange}
-                        placeholder="Enter your last name"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color focus:border-watersecblue dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two"
-                      />
-                      {errors.lastName && <p className="text-red-500 text-sm mt-1">{errors.lastName}</p>}
-                    </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="lastName"
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      onBlur={handleBlurValidate}
+                      placeholder="Last Name:"
+                      className={inputClass("lastName")}
+                    />
+                    {errors.lastName && (
+                      <p className="mt-1 text-sm text-red-100 bg-red-500/20 rounded px-2 py-1 inline-block">
+                        {errors.lastName}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Email */}
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label htmlFor="email" className="mb-3 block text-sm font-medium text-dark dark:text-white">
-                        Email
-                      </label>
-                      <input
-                        type="text"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Enter your email"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color focus:border-watersecblue dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two"
-                      />
-                      {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                    </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      onBlur={handleBlurValidate}
+                      placeholder="E-Mail:"
+                      className={inputClass("email")}
+                    />
+                    {errors.email && (
+                      <p className="mt-1 text-sm text-red-100 bg-red-500/20 rounded px-2 py-1 inline-block">
+                        {errors.email}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Phone */}
-                  <div className="w-full px-4 md:w-1/2">
-                    <div className="mb-8">
-                      <label htmlFor="phone" className="mb-3 block text-sm font-medium text-dark dark:text-white">
-                        Phone Number
-                      </label>
-                      <input
-                        type="text"
-                        name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        placeholder="Enter your phone number"
-                        className="border-stroke w-full rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color focus:border-watersecblue dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two"
-                      />
-                      {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                    </div>
+                  <div>
+                    <input
+                      type="text"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      onBlur={handleBlurValidate}
+                      placeholder="Phone:"
+                      className={inputClass("phone")}
+                    />
+                    {errors.phone && (
+                      <p className="mt-1 text-sm text-red-100 bg-red-500/20 rounded px-2 py-1 inline-block">
+                        {errors.phone}
+                      </p>
+                    )}
                   </div>
+                </div>
 
-                  {/* Message */}
-                  <div className="w-full px-4">
-                    <div className="mb-8">
-                      <label htmlFor="message" className="mb-3 block text-sm font-medium text-dark dark:text-white">
-                        Message
-                      </label>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleChange}
-                        rows={5}
-                        placeholder="Enter your message"
-                        className="border-stroke w-full resize-none rounded-xs border bg-[#f8f8f8] px-6 py-3 text-base text-body-color focus:border-watersecblue dark:border-transparent dark:bg-[#2C303B] dark:text-body-color-dark dark:shadow-two"
-                      />
-                      {errors.message && <p className="text-red-500 text-sm mt-1">{errors.message}</p>}
-                    </div>
-                  </div>
+                {/* Message */}
+                <div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    onBlur={handleBlurValidate}
+                    rows={6}
+                    placeholder="Please tell us how we can help..."
+                    className={
+                      "w-full resize-none rounded-lg bg-white text-[#1C2B5A] placeholder-bleujdid/70 px-5 py-4 border-2 focus:outline-none " +
+                      (errors.message
+                        ? "border-red-500 focus:ring-4 focus:ring-red-200"
+                        : "border-white focus:ring-4 focus:ring-white/30")
+                    }
+                  />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-100 bg-red-500/20 rounded px-2 py-1 inline-block">
+                      {errors.message}
+                    </p>
+                  )}
+                </div>
 
-                  {/* Submit Button */}
-                  <div className="w-full px-4">
-                    <button
-                      type="submit"
-                      className="rounded-xs bg-watersecblue px-9 py-4 text-base font-medium text-white shadow-submit duration-300 hover:bg-watersecblue/90 dark:shadow-submit-dark"
-                    >
-                      Send
-                    </button>
-                  </div>
+                {/* Buttons */}
+                <div className="flex items-center justify-center gap-4 pt-2">
+                  <button
+                    type="submit"
+                    className="rounded-full bg-white text-bleujdid px-10 py-3 text-base font-semibold shadow-[0_6px_20px_rgba(255,255,255,0.25)] hover:opacity-90"
+                  >
+                    Send
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (confirm("Clear the form?")) {
+                        setFormData({
+                          firstName: "",
+                          lastName: "",
+                          email: "",
+                          phone: "",
+                          message: "",
+                        });
+                        setErrors({});
+                      }
+                    }}
+                    className="rounded-full border-2 border-white text-white px-10 py-3 text-base font-semibold hover:bg-white/10"
+                  >
+                    Delete
+                  </button>
                 </div>
               </form>
             </div>
           </div>
 
-          {/* Newsletter */}
-          <div className="w-full px-4 lg:w-5/12 xl:w-4/12">
-            <NewsLetterBox />
+
+          <div className="flex flex-col justify-start space-y-8">
+
+            <div>
+              <NewsLetterBox />
+            </div>
           </div>
         </div>
       </div>

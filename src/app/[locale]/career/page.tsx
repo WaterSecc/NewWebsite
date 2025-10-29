@@ -1,7 +1,7 @@
-import Breadcrumb from "@/components/Common/Breadcrumb";
 import Career from "@/components/Career";
 
 import { Metadata } from "next";
+import CareerHero from "@/components/CareerHero";
 
 export const metadata: Metadata = {
   title: "WaterSec | Career",
@@ -12,11 +12,7 @@ export const metadata: Metadata = {
 const DemoPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Career"
-        description=""
-      />
-
+      <CareerHero/>
       <Career />
     </>
   );

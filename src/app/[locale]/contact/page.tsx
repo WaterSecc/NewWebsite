@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Common/Breadcrumb";
 import Contact from "@/components/Contact";
+import ContactHero from "@/components/ContactHero";
 
 import { Metadata } from "next";
 
@@ -12,11 +13,7 @@ export const metadata: Metadata = {
 const ContactPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="Contact Page"
-        description=""
-      />
-
+      <ContactHero/>
       <Contact />
     </>
   );
