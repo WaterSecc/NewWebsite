@@ -16,6 +16,7 @@ module.exports = {
                 darkergray: '#464545',
                 menulightblue: '#70ADFF',
                 bleujdid: '#006CFF',
+                darkbleujdid: '#004199',
             },
         },
     },

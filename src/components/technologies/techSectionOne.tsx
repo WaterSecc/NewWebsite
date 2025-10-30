@@ -17,30 +17,16 @@ const TechSectionOne = () => {
   );
 
   return (
-    <section className="overflow-hidden pt-[180px] pb-[120px]">
+    <section className="overflow-hidden pt-[10px] pb-[30px]">
         <div className="container">
           <div className="-mx-4 flex flex-wrap">
             <div className="w-full px-4 lg:w-13/15">
               <div>
-                <h1 className="mb-8 text-3xl leading-tight font-bold text-black sm:text-4xl sm:leading-tight dark:text-white">
-                 How it works
-                </h1>
+                <h3 className="mb-8 text-xl leading-tight font-normal text-black sm:text-4xl sm:leading-tight dark:text-white">
+                 Water<b>Sec</b> offers IoT devices communicating with a gateway and sending the water usage data to a dashboard that offers numerous features.
+                </h3>
                 
-                <div>
-                  <p className="text-body-color mb-10 text-base leading-relaxed font-medium sm:text-lg sm:leading-relaxed lg:text-base lg:leading-relaxed xl:text-lg xl:leading-relaxed">
-                    WaterSec operates by deploying smart IoT sensors throughout a building’s water infrastructure to continuously monitor consumption patterns. These sensors collect data in real time, detecting anomalies such as leaks or abnormal usage. The data is transmitted securely to the cloud, where it is processed using AI-driven analytics. Users can then access a user-friendly dashboard that visualizes water consumption trends, pinpoints inefficiencies, and provides alerts—empowering businesses to track, control, and optimize their water usage in real time.
-                  </p>
-                  <div className="mb-10 w-[200px] overflow-hidden rounded-sm">
-                    <div className="relative aspect-97/60 w-[150px] sm:aspect-97/44">
-                      <Image
-                        src="/images/technologies/how.jpg"
-                        alt="image"
-                        fill
-                        className="h-[200px] w-[200px] object-cover object-center"
-                      />
-                    </div>
-                  </div>
-                </div>
+                
               </div>
             </div>
           </div>

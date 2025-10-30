@@ -41,20 +41,6 @@ const SingleValue = ({ value }: { value: Value }) => {
           </div>
         </div>
       </div>
-
-      {/* Button */}
-      <button
-        className="
-          mt-3 block w-[min(240px,78vw)] mx-auto
-          rounded-full border border-bleujdid bg-white
-          py-2.5 text-[16px] font-semibold text-bleujdid
-          transition-colors duration-300
-          group-hover:bg-bleujdid group-hover:text-white group-hover:border-bleujdid
-          hover:bg-bleujdid hover:text-white hover:border-bleujdid
-        "
-      >
-        Read more
-      </button>
     </div>
   );
 };

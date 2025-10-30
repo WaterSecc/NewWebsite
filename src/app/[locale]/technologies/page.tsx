@@ -12,6 +12,7 @@ import TechSectionTwo from "@/components/technologies/techSectionTwo";
 import Features from "@/components/Features";
 import ProductsMainSection from "@/components/Products/productMainSection";
 import DashboardsSection from "@/components/Products/dashboardsSection";
+import TechHero from "@/components/TechHero";
 
 export const metadata: Metadata = {
   title: "WaterSec | Technologies",
@@ -23,11 +24,7 @@ const BlogSidebarPage = () => {
   return (
     <>
 
-      <Breadcrumb
-        pageName="Technologies"
-        description="WaterSec offers IoT devices communicating with a gateway and sending the water usage data to a dashboard that offers numerous features."
-        bgImage="/images/technologies/dashboard.jpeg" // Remove this line to fall back to SVGs
-      />
+      <TechHero/>
       <TechSectionOne />
       <TechSectionTwo />
       <ProductsMainSection />

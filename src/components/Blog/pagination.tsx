@@ -102,7 +102,7 @@ export default function BlogPagination({ posts }: Props) {
     group-hover:text-white/80
   "
 >
-  {/* Logo wrapper: perfectly aligned with text */}
+  {/* Logo*/}
   <span className="relative inline-flex items-center justify-center h-6 w-[90px] flex-shrink-0 align-middle pointer-events-none">
     {/* Default (blue) */}
     <Image

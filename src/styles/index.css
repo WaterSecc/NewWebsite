@@ -31,6 +31,7 @@
   --color-darkergray: #464545;
   --color-menulightblue: #70ADFF;
   --color-bleujdid: #006CFF;
+  --color-darkbleujdid: #004199;
 
   --color-body-color: #788293;
   --color-body-color-dark: #959cb1;
@@ -66,6 +67,13 @@
   --shadow-btn-light: 0px 1px 2px rgba(0, 0, 0, 0.1);
 
   --drop-shadow-three: 0px 5px 15px rgba(6, 8, 15, 0.05);
+
+  --gradient-bleujdid: linear-gradient(90deg, #006CFF 0%, #004199 100%);
+
+}
+
+.dark {
+  --color-bg-color-dark: var(--gradient-bleujdid);
 }
 
 @utility container {
@@ -193,6 +201,10 @@
 
   .rotate-y-180 {
     transform: rotateY(180deg);
+  }
+
+  .bg-dark-gradient {
+    background: linear-gradient(90deg, #006CFF 0%, #004199 100%);
   }
 }
 

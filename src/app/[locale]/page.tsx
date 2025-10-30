@@ -1,15 +1,13 @@
-import Brands from "@/components/Brands";
 import ScrollUp from "@/components/Common/ScrollUp";
 import Solutions from "@/components/Solutions";
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import KPIs from "@/components/KPIs";
 import Media from "@/components/Media";
-import SDG from "@/components/SDGs";
 import TrustedBy from "@/components/TrustedBy";
-import AboutSectionFour from "@/components/About/AboutSectionFour";
 import MapSection from "@/components/About/MapSection";
 import { Metadata } from "next";
+import Partners from "@/components/Partners";
 
 export const metadata: Metadata = {
   title: "WaterSec | Smart Water Management Solutions",
@@ -30,7 +28,7 @@ export default function Home() {
       <Testimonials />
       <Media />
       <MapSection />
-      {/*<Brands />*/}
+      <Partners />
     </main>
   );
 }

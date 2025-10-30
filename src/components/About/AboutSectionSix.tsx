@@ -22,12 +22,11 @@ const team = [
   {
     name: "Aziza Taboubi",
     title: "Software Engineer",
-    image: "/images/about/Aziza.jpg",
+    image: "/images/about/Aziza.png",
     linkedin: "https://www.linkedin.com/in/aziza-taboubi/",
   },
 ];
 
-/* ── Tall chevron exactly like the founders slider ───────────────────── */
 function Chevron({ dir = "left" }: { dir?: "left" | "right" }) {
   return (
     <svg
@@ -54,9 +53,8 @@ const PrevArrow = ({ onClick }: any) => (
   <button type="button" aria-label="Previous" onClick={onClick} className="members-chev members-chev--left">
     <Chevron dir="left" />
   </button>
-);
+); 
 
-/* ── Slick settings ──────────────────────────────────────────────────── */
 const settings = {
   dots: false,
   infinite: true,
@@ -73,7 +71,6 @@ const settings = {
   ],
 };
 
-/* ── Component ───────────────────────────────────────────────────────── */
 const AboutSectionSix = () => {
   return (
     <section className="relative z-10 bg-white py-12 md:py-16 lg:py-20">
@@ -86,7 +83,6 @@ const AboutSectionSix = () => {
           <Slider {...settings}>
             {team.map((member, index) => (
               <div key={index} className="px-3 text-center">
-                {/* avatar wrapper is relative so chevrons sit beside the circle */}
                 <div className="relative mx-auto mb-6 h-56 w-56 overflow-hidden rounded-full border-4 border-white shadow-[0_10px_25px_rgba(0,0,0,0.08)]">
                   <Image
                     src={member.image}
@@ -116,7 +112,6 @@ const AboutSectionSix = () => {
         </div>
       </div>
 
-      {/* exact arrow look & no-clip tweaks */}
       <style jsx global>{`
         .members-slider .slick-list { overflow: visible; }
         .members-slider .slick-slide > div { position: relative; }

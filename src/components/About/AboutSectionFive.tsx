@@ -9,25 +9,25 @@ const advisors = [
   {
     name: "Slim Ben Ammar",
     title: "Mentor",
-    image: "/images/advisors/SlimBenAmmar.jpeg",
+    image: "/images/advisors/SlimBenAmmar.png",
     linkedin: "https://www.linkedin.com/in/slim-ben-ammar-ceo/",
   },
   {
     name: "Rim Baouendi",
     title: "Advisor",
-    image: "/images/advisors/RimBawendi.jpeg",
+    image: "/images/advisors/RimBawendi.png",
     linkedin: "https://www.linkedin.com/in/rymbaouendi/",
   },
   {
     name: "Neila Ben Zina",
     title: "Advisor",
-    image: "/images/advisors/NeilaBenZina.jpeg",
+    image: "/images/advisors/NeilaBenZina.png",
     linkedin: "https://www.linkedin.com/in/neila-benzina/",
   },
   {
     name: "Darine Amayed",
     title: "Advisor",
-    image: "/images/advisors/DarineAmayed.jpeg",
+    image: "/images/advisors/DarineAmayed.png",
     linkedin:
       "https://www.linkedin.com/in/darine-ameyed-a9526124/?originalSubdomain=ca",
   },

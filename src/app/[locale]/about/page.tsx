@@ -7,6 +7,7 @@ import Values from "@/components/Values";
 import AdvisorsSection from "@/components/About/AboutSectionFive";
 import AboutSectionSix from "@/components/About/AboutSectionSix";
 import MapSection from "@/components/About/MapSection";
+import AboutHero from "@/components/AboutHero";
 
 export const metadata: Metadata = {
   title: "WaterSec | About WaterSec",
@@ -17,11 +18,7 @@ export const metadata: Metadata = {
 const AboutPage = () => {
   return (
     <>
-      <Breadcrumb
-        pageName="About Us"
-        description=""
-        bgImage="/images/about/about-bg.jpeg" 
-      />
+      <AboutHero/>
       <AboutSectionOne />
       <AboutSectionTwo />
       <Values />

@@ -120,7 +120,7 @@ const Demo = () => {
             <div className="flex justify-center">
               <div className="relative w-[260px] sm:w-[300px] md:w-[340px] lg:w-[360px] aspect-[9/19.5]">
                 <Image
-                  src="/images/demo/phone-mock.png"
+                  src="/images/demo/IPhoneDemo.png"
                   alt="WaterSec mobile preview"
                   fill
                   className="object-contain drop-shadow-2xl"
